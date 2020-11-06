@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-//changed to read a .csv file containing the scores, assumes a correctly formatted scv
+//changed to read a .csv file containing the scores, assumes a correctly formatted csv
 public class bowling{
 
     //reads a correctly formatted .csv and calculates the score for each line (game)
@@ -120,6 +120,11 @@ public class bowling{
         if(args.length == 0){ //no input defaults to included unit tests
             unitTests();
         }else if(args[0] != null){ //expects only 1 file as input, the file can have numerous games
+            //check input for correct file type
+            if(!args[0].substring(args[0].length()-4, args[0].length()).equals(".csv")){
+                System.out.println("Error: expecting a .csv file");
+                return;
+            }
             ArrayList<Integer> results = readCSV(args[0]);
             if(results != null){
                 for(int score:results){
