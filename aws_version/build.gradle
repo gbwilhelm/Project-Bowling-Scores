@@ -1,0 +1,18 @@
+buildscript {
+    group 'aws.test'
+    version '1.0'
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+    
+    dependencies {
+        implementation platform('software.amazon.awssdk:bom:2.15.22')
+        implementation 'software.amazon.awssdk:s3'
+        implementation 'software.amazon.awssdk:dynamodb'
+    }
+}

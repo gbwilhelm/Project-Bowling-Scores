@@ -1,10 +1,12 @@
+package aws_version;
+
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 //changed to read a .csv file containing the scores, assumes a correctly formatted csv
-public class bowling{
+public class bowling_lambda{
 
     //reads a correctly formatted .csv and calculates the score for each line (game)
     private static ArrayList<Integer> readCSV(String filePath){
@@ -97,21 +99,21 @@ public class bowling{
         System.out.println("Running Numeric tests: ");
         ArrayList<Integer> numericExpected = new ArrayList<Integer>();
         numericExpected.add(0); numericExpected.add(10); numericExpected.add(90);
-        ArrayList<Integer> numericActual = readCSV("./tests/numeric_test.csv");
+        ArrayList<Integer> numericActual = readCSV("./Tests/numeric_test.csv");
         assert numericActual.equals(numericExpected);
         System.out.println("PASSED\n");
 
         System.out.println("Running Spares tests: ");
         ArrayList<Integer> sparesExpected = new ArrayList<Integer>();
         sparesExpected.add(96); sparesExpected.add(105); sparesExpected.add(150);
-        ArrayList<Integer> sparesActual = readCSV("./tests/spares_test.csv");
+        ArrayList<Integer> sparesActual = readCSV("./Tests/spares_test.csv");
         assert sparesActual.equals(sparesExpected);
         System.out.println("PASSED\n");
 
         System.out.println("Running Strikes tests: ");
         ArrayList<Integer> strikesExpected = new ArrayList<Integer>();
         strikesExpected.add(46); strikesExpected.add(100); strikesExpected.add(101); strikesExpected.add(300);
-        ArrayList<Integer> strikesActual = readCSV("./tests/strikes_test.csv");
+        ArrayList<Integer> strikesActual = readCSV("./Tests/strikes_test.csv");
         assert strikesActual.equals(sparesExpected);
         System.out.println("PASSED");
     }
