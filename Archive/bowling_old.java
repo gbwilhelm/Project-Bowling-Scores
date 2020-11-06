@@ -1,4 +1,4 @@
-package Archive;
+package archive;
 //ported C source to java
 public class bowling_old{
     /*created because C.atoi() processes strings not individual chars
