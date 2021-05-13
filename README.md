@@ -1,2 +1,2 @@
 # Project-Bowling-Scores
-Interactive demo of a bowling score calculator deployed using AWS services
+Interactive demo of a bowling score calculator. Project abandoned.
